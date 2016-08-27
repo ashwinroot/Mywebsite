@@ -1,7 +1,1 @@
-hello
-<<<<<<< HEAD
-World
-=======
-Worl
-William
->>>>>>> detour
+hi
