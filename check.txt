@@ -1,2 +1,7 @@
 hello
+<<<<<<< HEAD
 World
+=======
+Worl
+William
+>>>>>>> detour
