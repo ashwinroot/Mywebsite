@@ -14,19 +14,25 @@ var myFirebase = new Firebase('https://proj-d5898.firebaseio.com/');
    myFirebase.on('child_added', function(snapshot) {
      var msg = snapshot.val();
 
+
      var msgUsernameElement = document.createElement("strong");
      msgUsernameElement.textContent = msg.username;
-     msgUsernameElement.clasname="primary-font";
+     msgUsernameElement.classname="primary-font";
 
      var msgTextElement = document.createElement("p");
      msgTextElement.textContent = msg.text;
 
+
      var msgElement = document.createElement("div");
-     msgElement.classname="chat-body clearfix";
+     msgElement.id= "msg";
      msgElement.appendChild(msgUsernameElement);
      msgElement.appendChild(msgTextElement);
 
      document.getElementById("results").appendChild(msgElement);
+     msgElement.scrollTop = msgElement.scrollHeight;
+
+     var box=document.getElementById("box");
+     box.scrollTop=box.scrollHeight;
    });
  }
 

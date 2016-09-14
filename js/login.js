@@ -1,6 +1,6 @@
-var ref = new Firebase("https://myblog-ecd8e.firebaseio.com/chat");
 
-var login = getElementById('inputEmail3');
-var password = getElementById('inputPassword3');
+var postButton = document.querySelector('#Login');
+var login = document.getElementById('#email');
+var password = document.getElementById('#password');
 
-console.log(login + password);
+console.log(login+password);
