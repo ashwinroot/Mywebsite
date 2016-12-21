@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" src="css/chat.css" />
+    <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
+</head>
+<body>
+<div class="panel panel-heading">
+    <h3><span class="label label-default">Chatting</span></h3>
+</div>
+</div>
+
+<div class="panel panel-default pre-scrollable" id="box">
+    <div id="results" class="clearfix">
+
+    </div>
+</div>
+</br>
+<div class="footer navbar-fixed-bottom">
+    <form class="form-inline">
+        <textarea id="textarea" placeholder="Type here..." class="form-control" onkeyup="auto_grow('textarea')"></textarea>
+        <button id="post" class="glyphicons glyphicons-send"></button><br/>
+    </form>
+</div>
+
+<script src="js/chat.js"></script>
+<script>
+
+</script>
+</body>
+</html>
