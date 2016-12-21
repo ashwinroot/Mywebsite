@@ -30,7 +30,7 @@ var myFirebase = new Firebase('https://proj-d5898.firebaseio.com/');
     var msgText = textInput.value;
     var time = get_time();   //getting time from function
 
-    myFirebase.push({username:msgUser, text:msgText , date:today, postTime:time});
+    myFirebase.push({username:msgUser, text:msgText ,postTime:time});
     textInput.value = "";
   });
 
@@ -46,10 +46,6 @@ var myFirebase = new Firebase('https://proj-d5898.firebaseio.com/');
      var msgTextElement = document.createElement("p");
      msgTextElement.textContent = msg.text;
      msgTextElement.class ="card-text";
-
-
-
-
 
      var msgElement = document.createElement("div");
      msgElement.id= "msg";

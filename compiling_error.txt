@@ -1,6 +1,0 @@
-ld: warning: ignoring file index.html, file was built for unsupported file format ( 0x3C 0x21 0x44 0x4F 0x43 0x54 0x59 0x50 0x45 0x20 0x68 0x74 0x6D 0x6C 0x3E 0x0A ) which is not the architecture being linked (x86_64): index.html
-Undefined symbols for architecture x86_64:
-  "_main", referenced from:
-     implicit entry/start for main executable
-ld: symbol(s) not found for architecture x86_64
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
