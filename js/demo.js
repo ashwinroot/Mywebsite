@@ -14,7 +14,8 @@ $(document).ready(function () {
         console.log(data);
         ip=data.ip;
         var Fire = new Firebase('https://proj-d5898.firebaseio.com/ip/');
-        Fire.push({IP: ip});
+        var ter = get_time();
+        Fire.push({IP: ip, time: ter});
     });
 });
 function get_time() {
