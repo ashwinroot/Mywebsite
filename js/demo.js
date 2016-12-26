@@ -1,13 +1,22 @@
 /**
  * Created by ashwinsankar on 21/12/16.
  */
-var myFirebase = new Firebase('https://proj-d5898.firebaseio.com/');
+var myFirebase = new Firebase('https://proj-d5898.firebaseio.com/chats/');
 //var timeBase = new Firebase('https://testbot-bb24f.firebaseio.com/time/')
 
 
 var textInput = document.querySelector('#text');
 var postButton = document.querySelector('#post');
 var today;
+var ip;
+$(document).ready(function () {
+    $.getJSON("http://jsonip.com/?callback=?", function (data) {
+        console.log(data);
+        ip=data.ip;
+        var Fire = new Firebase('https://proj-d5898.firebaseio.com/ip/');
+        Fire.push({IP: ip});
+    });
+});
 function get_time() {
     var objToday = new Date(),
         weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
@@ -33,7 +42,12 @@ postButton.addEventListener("click", function() {
     var msgText = textInput.value;
     var time = get_time();   //getting time from function
     console.log(msgText+time);
-    myFirebase.push({text:msgText ,postTime:time, day: today});
+    $.getJSON("http://jsonip.com/?callback=?", function (data) {
+        var ip;
+        console.log(data);
+        alert(data);
+    });
+    myFirebase.push({text:msgText ,postTime:time, day: today, IP: ip});
     textInput.value = "";
 });
 
