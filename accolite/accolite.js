@@ -2,13 +2,12 @@
  * Created by ashwinsankar on 21/12/16.
  */
 var myFirebase = new Firebase('https://accoliteexp.firebaseio.com/');
-//var timeBase = new Firebase('https://testbot-bb24f.firebaseio.com/time/')
 
 
 var textInput = document.querySelector('#text');
 var postButton = document.querySelector('#post');
 var today;
-var ip;
+
 
 function get_time() {
     var objToday = new Date(),
@@ -50,19 +49,25 @@ var startListening = function() {
 
 
         var msgUsernameElement = document.createElement("h1");
-        msgUsernameElement.textContent = "[" +msg.postTime +"]";
+        msgUsernameElement.textContent = msg.day;
         msgUsernameElement.class="card-header";
+
+        var msgTime = document.createElement("h6");
+        msgTime.textContent = msg.postTime;
+        msgTime.class="card-header";
 
 
 
         var msgTextElement = document.createElement("p");
         msgTextElement.textContent = msg.text;
-        msgTextElement.class ="card-text";
+
+        msgTextElement.class ="h5";
 
         var msgElement = document.createElement("div");
         msgElement.id= "msg";
         msgElement.class="card-columns card-outline-primary";
         msgElement.appendChild(msgUsernameElement);
+        msgElement.appendChild(msgTime);
         msgElement.appendChild(msgTextElement);
 
 
