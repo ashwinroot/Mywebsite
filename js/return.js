@@ -17,6 +17,7 @@ $(document).ready(function () {
         var ter = get_time();
         Fire.push({IP: ip, time: ter});
     });
+
 });
 function get_time() {
     var objToday = new Date(),
@@ -46,7 +47,6 @@ postButton.addEventListener("click", function() {
     $.getJSON("http://jsonip.com/?callback=?", function (data) {
         var ip;
         console.log(data);
-        alert(data);
     });
     myFirebase.push({text:msgText ,postTime:time, day: today, IP: ip});
     textInput.value = "";
@@ -123,15 +123,12 @@ function auto_grow(e) {
     }
 }
 
-$(document).ready(function(){
-    $('#text').keypress(function(e){
-        if(e.which == 13){
-            // submit via ajax or
-            $('#post').click();
-        }
-    });
+$('#text').keypress(function(e){
+    if(e.which == 13){
+        // submit via ajax or
+        $('#post').click();
+    }
 });
-
 
 //time drop down
 
