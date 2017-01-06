@@ -48,7 +48,7 @@ var startListening = function() {
 
 
 
-        var msgUsernameElement = document.createElement("h1");
+        var msgUsernameElement = document.createElement("h3");
         msgUsernameElement.textContent = msg.day;
         msgUsernameElement.class="card-header";
 
@@ -91,7 +91,7 @@ startListening();
 
 
 var minRows = 2;
-var maxRows = 9;
+var maxRows = 30;
 
 function auto_grow(e) {
     var t = e;
