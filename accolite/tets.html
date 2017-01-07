@@ -1,30 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' , menu : false});</script>
+    <title>document.write alternative</title>
+    <meta charset="utf-8"/>
 </head>
 <body>
+<p>Here is some content.</p>
+<!-- load a script; any script -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<!-- here's our document.write analog; could just as easily be a remote file -->
 <script type="text/javascript">
-    tinyMCE.init({
-        // General options
-        mode : "specific_textareas",
-        editor_selector : "mceEditor"
-    });
+    // get the "last" script on the page
+    var s = document.getElementsByTagName('script');
+    s = s[s.length - 1];
+    var p = document.createElement('p');
+    p.innerHTML = "<strong>Here is some dynamic content</strong>.";
+    s.parentNode.insertBefore(p, s);
 </script>
-<script>
-    function content() {
-// Get the HTML contents of the currently active editor
-        console.debug(tinyMCE.activeEditor.getContent());
-//method1 getting the content of the active editor
-        alert(tinyMCE.activeEditor.getContent());
-//method2 getting the content by id of a particular textarea
-        alert(tinyMCE.get('myarea1').getContent());
-    }
-</script>
-<form method="post" action="somepage">
-    <textarea id="myarea1" class="mceEditor">This will be an editor.</textarea>
-</form>
-<button onclick="content()">Get content</button>
+<!-- load another script; any other script -->
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js"></script>
+<p>Here is some more content.</p>
 </body>
 </html>
+

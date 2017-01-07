@@ -4,7 +4,7 @@
 var myFirebase = new Firebase('https://accoliteexp.firebaseio.com/');
 
 
-var textInput = document.querySelector('#text');
+var textInput;
 var postButton = document.querySelector('#post');
 var today;
 
@@ -42,12 +42,9 @@ function get_time() {
 //event listener for click
 postButton.addEventListener("click", function() {
     var msgText = textInput;
+
     var time = get_time();   //getting time from function
     console.log(msgText+time);
-    $.getJSON("http://jsonip.com/?callback=?", function (data) {
-        var ip;
-        console.log(data);
-    });
     myFirebase.push({text:msgText ,postTime:time, day: today});
     textInput.value = "";
 });
@@ -55,8 +52,6 @@ postButton.addEventListener("click", function() {
 var startListening = function() {
     myFirebase.on('child_added', function(snapshot) {
         var msg = snapshot.val();
-
-
 
         var msgUsernameElement = document.createElement("h3");
         msgUsernameElement.textContent = msg.day;
@@ -66,10 +61,8 @@ var startListening = function() {
         msgTime.textContent = msg.postTime;
         msgTime.class="card-header";
 
-
-
         var msgTextElement = document.createElement("p");
-        msgTextElement.textContent = msg.text;
+        msgTextElement.innerHTML = msg.text + "<br><br> <hr> <br><br>";
 
         msgTextElement.class ="h5";
 
