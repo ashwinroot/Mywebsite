@@ -9,6 +9,16 @@ var postButton = document.querySelector('#post');
 var today;
 
 
+function content() {
+// Get the HTML contents of the currently active editor
+    console.debug(tinyMCE.activeEditor.getContent());
+//method1 getting the content of the active editor
+    alert(tinyMCE.activeEditor.getContent());
+   textInput = tinyMCE.activeEditor.getContent()
+//method2 getting the content by id of a particular textarea
+ //   alert(tinyMCE.get('myarea1').getContent());
+}
+
 function get_time() {
     var objToday = new Date(),
         weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
@@ -31,7 +41,7 @@ function get_time() {
 
 //event listener for click
 postButton.addEventListener("click", function() {
-    var msgText = textInput.value;
+    var msgText = textInput;
     var time = get_time();   //getting time from function
     console.log(msgText+time);
     $.getJSON("http://jsonip.com/?callback=?", function (data) {

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' , menu : false});</script>
+</head>
+<body>
+<script type="text/javascript">
+    tinyMCE.init({
+        // General options
+        mode : "specific_textareas",
+        editor_selector : "mceEditor"
+    });
+</script>
+<script>
+    function content() {
+// Get the HTML contents of the currently active editor
+        console.debug(tinyMCE.activeEditor.getContent());
+//method1 getting the content of the active editor
+        alert(tinyMCE.activeEditor.getContent());
+//method2 getting the content by id of a particular textarea
+        alert(tinyMCE.get('myarea1').getContent());
+    }
+</script>
+<form method="post" action="somepage">
+    <textarea id="myarea1" class="mceEditor">This will be an editor.</textarea>
+</form>
+<button onclick="content()">Get content</button>
+</body>
+</html>

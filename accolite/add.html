@@ -10,12 +10,15 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
+    <!-- Editor Version -->
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' , menu : false});</script>
 </head>
 <body>
   <h3>  Type the blog content to post</h3>
     <form class="form-inline" id="form">
         <div class="col-sm-12"><textarea id="text" placeholder="Type here..." class="form-control" onkeyup="auto_grow(this)" rows="15" cols="185"></textarea></div>
-        <div class="col-sm-4"><button id="post" class="btn btn-success" onclick="return false">  <span class="glyphicon glyphicon-send" aria-hidden="true"></span> </button></div><br/>
+        <div class="col-sm-4"><button id="post" class="btn btn-success" onclick="content()">  <span class="glyphicon glyphicon-send" aria-hidden="true"></span> </button></div><br/>
     </form>
 
 <script src="accolite.js"></script>
