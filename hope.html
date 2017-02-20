@@ -10,32 +10,25 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" src="css/chat.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
+    <script src="js/bootstrap-material-datetimepicker.js"></script>
 </head>
 <body>
-<div class="panel panel-heading">
-    <h3><span class="label label-default">Chatting</span></h3>
-
-
-</div>
 </div>
 
-<div class="panel panel-default pre-scrollable" id="box">
+<div class="panel panel-default pre-scrollable" id="box" style="padding: 10px; width: 95%; left: 5%" >
     <div id="results" class="clearfix">
-
     </div>
 </div>
 </br>
 <div class="footer navbar-fixed-bottom" style="position: relative;">
     <form class="form-inline" id="form">
-        <div class="col-sm-10"><textarea id="text" placeholder="waaatsup love?" class="form-control" onkeyup="auto_grow(this)" style="width: inherit;"></textarea></div>
-        <div class="col-sm-2"><button id="post" class="btn btn-success">  <span class="glyphicon glyphicon-send" aria-hidden="true"></span> </button></div><br/>
+       <span> <div class="col-sm-10"><textarea id="text" placeholder="waaatsup love?" class="form-control" onkeyup="auto_grow(this)" style="width: inherit; float:left;" autofocus></textarea></div>
+        <div class="col-sm-2"><button id="post" class="btn btn-success" style="display: inline;">  <span class="glyphicon glyphicon-send" aria-hidden="true" style="display: inline;"></span> </button></div><br/>
+        </span>
     </form>
 </div>
-
 <script src="js/return.js"></script>
-<script>
-
-</script>
 </body>
 </html>
