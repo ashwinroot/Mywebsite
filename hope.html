@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>..</title>
@@ -9,26 +10,32 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" src="css/chat.css" />
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://cdn.firebase.com/js/client/2.4.0/firebase.js'></script>
-    <script src="js/bootstrap-material-datetimepicker.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
-<body>
-</div>
 
-<div class="panel panel-default pre-scrollable" id="box" style="padding: 10px; width: 95%; left: 5%" >
-    <div id="results" class="clearfix">
+<body>
+    <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" href="#" id="usercount">Navbar</a>
+    </nav>
+
+    <div class="panel panel-default pre-scrollable" id="box" style="padding: 10px; width: 95%; left: 5%">
+        <div id="results" class="clearfix">
+        </div>
     </div>
-</div>
-</br>
-<div class="footer navbar-fixed-bottom" style="position: relative;">
-    <form class="form-inline" id="form">
-       <span> <div class="col-sm-10"><textarea id="text" placeholder="waaatsup love?" class="form-control" onkeyup="auto_grow(this)" style="width: inherit; float:left;" autofocus></textarea></div>
-        <div class="col-sm-2"><button id="post" class="btn btn-success" style="display: inline;">  <span class="glyphicon glyphicon-send" aria-hidden="true" style="display: inline;"></span> </button></div><br/>
-        </span>
+    </br>
+    <div class="footer navbar-fixed-bottom" style="position: relative;">
+        <form class="form-inline" id="form">
+            <span> <div class="col-sm-10"><textarea id="text" placeholder="waaatsup love?" class="form-control" onkeyup="auto_grow(this)" style="width: inherit; float:left;" autofocus></textarea></div>
+        <div class="col-sm-2"><button id="post" class="btn btn-success" style="display: inline;">  <i class="fa fa-paper-plane" aria-hidden="true"></i> </button>
+    </div><br/>
+    </span>
     </form>
-</div>
-<script src="js/return.js"></script>
+    </div>
+    <script src="js/return.js"></script>
 </body>
+
 </html>
